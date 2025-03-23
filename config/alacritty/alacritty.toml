@@ -1,0 +1,31 @@
+[window]
+dynamic_title = true
+opacity = 1
+
+# Everforest Medium
+# MIT License
+# Copyright (c) 2019 sainnhe
+# https://github.com/sainnhe/everforest
+[colors.primary]
+background = "#2D353B"
+foreground = "#D3C6AA"
+
+[colors.normal]
+black   = "#232A2E"
+red     = "#E67E80"
+green   = "#A7C080"
+yellow  = "#DBBC7F"
+blue    = "#7FBBB3"
+magenta = "#D699B6"
+cyan    = "#83C092"
+white   = "#FFFFFF"
+
+# JetBrains Mono
+# OFL-1.1 License
+# Copyright (c) 2020 The JetBrains Mono Project Authors
+# https://github.com/JetBrains/JetBrainsMono
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+font.size = 12
