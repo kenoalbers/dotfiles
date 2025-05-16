@@ -1,16 +1,21 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, nixpkgs-unstable, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  hardware.firmware = [ nixpkgs-unstable.legacyPackages.${pkgs.system}.sof-firmware pkgs.alsa-firmware ];
+  boot.extraModprobeConfig = ''
+    options snd-sof-intel-hda-generic hda_model=alc287-yoga9-bass-spk-pin
+  '';
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -67,9 +72,8 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
+    jack.enable = true;
+    wireplumber.enable = true;
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
@@ -128,7 +132,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment? # YES, leave this, very important somehow
 
   nix.settings.experimental-features = [
     "nix-command"
