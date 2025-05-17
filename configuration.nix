@@ -12,6 +12,12 @@
   
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.kernelModules = [
+   "iwlmvm"
+   "iwlwifi" 
+  ];
+
+  # Fix sound issue
   hardware.firmware = [ nixpkgs-unstable.legacyPackages.${pkgs.system}.sof-firmware pkgs.alsa-firmware ];
   boot.extraModprobeConfig = ''
     options snd-sof-intel-hda-generic hda_model=alc287-yoga9-bass-spk-pin

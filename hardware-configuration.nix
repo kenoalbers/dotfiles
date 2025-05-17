@@ -8,25 +8,25 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/dc836341-7228-4171-9a8d-75b21495b981";
+    { device = "/dev/disk/by-uuid/f1703376-f3e8-4a14-bc3c-59c0598f4e79";
       fsType = "ext4";
     };
 
+  boot.initrd.luks.devices."luks-ab3650f5-4d00-42ca-b893-4f448898d697".device = "/dev/disk/by-uuid/ab3650f5-4d00-42ca-b893-4f448898d697";
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/4689-DFB4";
+    { device = "/dev/disk/by-uuid/D53E-8F03";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/cb879c86-c6c8-464b-bd3c-69d6c04e592f"; }
-    ];
+  swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
