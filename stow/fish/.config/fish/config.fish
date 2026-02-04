@@ -10,4 +10,3 @@ if status is-interactive
     alias ls lsd
     alias cat bat
 end
-
