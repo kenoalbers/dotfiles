@@ -27,5 +27,3 @@ white   = "#FFFFFF"
 [font.normal]
 family = "JetBrains Mono"
 style = "Regular"
-
-font.size = 12
