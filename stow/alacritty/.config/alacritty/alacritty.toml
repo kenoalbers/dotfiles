@@ -3,7 +3,7 @@ dynamic_title = true
 opacity = 1
 
 [terminal]
-shell.program = "/usr/bin/fish"
+shell.program = "/home/kenoalbers/.nix-profile/bin/fish"
 shell.args = ["-l"]
 
 # Everforest Medium
