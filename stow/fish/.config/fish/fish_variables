@@ -7,9 +7,10 @@ SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1eilancosman/tide\x40v6
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR _tide_left_items:pwd\x1egit\x1enewline\x1echaracter
+SETUVAR _tide_prompt_1076594:\x1b\x5b30m\x1b\x5b49m\x1b\x5b40m\x20\x40PWD\x40\x20\x1b\x5b30m\x1b\x5b49m\ue0b0\x1e\x1b\x5b92m\u276f
 SETUVAR _tide_prompt_1731604:\x1b\x5b30m\x1b\x5b49m\x1b\x5b40m\x20\x40PWD\x40\x20\x1b\x5b30m\x1b\x5b49m\ue0b0\x1e\x1b\x5b92m\u276f
 SETUVAR _tide_prompt_2529828:\x1b\x5b30m\x1b\x5b49m\x1b\x5b40m\x20\x40PWD\x40\x20\x1b\x5b30m\x1b\x5b49m\ue0b0\x1e\x1b\x5b92m\u276f
-SETUVAR _tide_right_items:status\x1ecmd_duration\x1econtext\x1ejobs\x1edirenv\x1enode\x1epython\x1erustc\x1ejava\x1ego\x1ekubectl\x1etoolbox\x1eterraform
+SETUVAR _tide_right_items:status\x1ecmd_duration\x1econtext\x1ejobs\x1edirenv\x1enode\x1epython\x1erustc\x1ejava\x1ego\x1ekubectl\x1etoolbox\x1eterraform\x1enix_shell
 SETUVAR --export fish_color_autosuggestion:4F585E
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR --export fish_color_command:A7C080
@@ -47,6 +48,7 @@ SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
+SETUVAR fish_user_paths:/home/kenoalbers/\x2enix\x2dprofile/bin
 SETUVAR tide_aws_bg_color:black
 SETUVAR tide_aws_color:yellow
 SETUVAR tide_aws_icon:\uf270
