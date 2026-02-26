@@ -9,5 +9,8 @@ pkgs.buildEnv {
     zoxide
     lsd
     bat
+    azure-cli
+    fzf
+    powershell
   ];
 }
