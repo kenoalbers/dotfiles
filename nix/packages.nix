@@ -3,14 +3,18 @@
 pkgs.buildEnv {
   name = "shell-packages";
   paths = with pkgs; [
-    vim
+    # Shell
     fish
-    git
-    zoxide
+    vim
     lsd
+    zoxide
     bat
-    azure-cli
     fzf
+    # Basic
+    git
+    htop
+    # Work
+    (azure-cli.withExtensions [ azure-cli.extensions.resource-graph ])
     powershell
   ];
 }
