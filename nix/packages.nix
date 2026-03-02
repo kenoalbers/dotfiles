@@ -13,8 +13,9 @@ pkgs.buildEnv {
     # Basic
     git
     htop
-    # Work
+    # Azure / IaC / Microsoft
     (azure-cli.withExtensions [ azure-cli.extensions.resource-graph ])
     powershell
+    devcontainer
   ];
 }
