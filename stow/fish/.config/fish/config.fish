@@ -1,12 +1,1 @@
-# Disable Greeting
-set fish_greeting 
-
-if status is-interactive
-    # better cd alternative
-    zoxide init fish | source
-
-    ### aliases
-    alias cd z
-    alias ls lsd
-    alias cat bat
-end
+/nix/store/wmyw3lw5n95wk2xddm0sjyll60q9vly6-home-manager-files/.config/fish/config.fish
