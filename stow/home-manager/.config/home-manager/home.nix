@@ -23,7 +23,11 @@
     devcontainer
   ];
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellInit = builtins.readFile ./fish/shellInit.fish;
+    interactiveShellInit = builtins.readFile ./fish/interactiveShellInit.fish;
+  };
   programs.vim.enable = true;
   programs.git.enable = true;
   programs.fzf.enable = true;
