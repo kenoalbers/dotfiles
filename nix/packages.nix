@@ -3,6 +3,8 @@
 pkgs.buildEnv {
   name = "shell-packages";
   paths = with pkgs; [
+    # Desktop applications
+    protonmail-desktop
     # Shell
     fish
     vim
