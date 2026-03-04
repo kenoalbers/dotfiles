@@ -23,10 +23,22 @@
     devcontainer
   ];
 
+  programs.alacritty = {
+    enable = true;
+    settings = builtins.fromTOML (builtins.readFile ./alacritty/alacritty.toml);
+  };
+
+
   programs.fish = {
     enable = true;
     shellInit = builtins.readFile ./fish/shellInit.fish;
-    interactiveShellInit = builtins.readFile ./fish/interactiveShellInit.fish;
+    interactiveShellInit = 
+      builtins.readFile ./fish/interactiveShellInit.fish +
+      builtins.readFile ./fish/tide.fish;
+
+    plugins = [
+      { name = "tide"; src = pkgs.fishPlugins.tide.src; }
+    ];
   };
   programs.vim.enable = true;
   programs.git.enable = true;
