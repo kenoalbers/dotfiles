@@ -27,6 +27,7 @@
     vim.enable = true;
     git.enable = true;
     bat.enable = true;
+
     zoxide = {
       enable = true;
       enableFishIntegration = true;
@@ -40,11 +41,11 @@
     # Shell
     fish = {
       enable = true;
-      shellInit = builtins.readFile ./config/fish/shellInit.fish;
+      shellInit = builtins.readFile ./configs/fish/shellInit.fish;
       interactiveShellInit =
-        builtins.readFile ./config/fish/interactiveShellInit.fish
+        builtins.readFile ./configs/fish/interactiveShellInit.fish
         + "\n"
-        + builtins.readFile ./config/fish/tide.fish;
+        + builtins.readFile ./configs/fish/tide.fish;
       plugins = [
         {
           name = "tide";
@@ -56,5 +57,5 @@
 
   # Configure alacritty through home manager without being a nix package.
   # This helps to avoid issues with desktop applications on non-NixOS systems.
-  xdg.configFile."alacritty/alacritty.toml".source = ./config/alacritty/alacritty.toml;
+  xdg.configFile."alacritty/alacritty.toml".source = ./configs/alacritty/alacritty.toml;
 }
