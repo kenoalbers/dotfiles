@@ -7,54 +7,54 @@
 
   # Warning: Check release-notes before updating
   home.stateVersion = "25.11";
+
   home.packages = with pkgs; [
     # Shell
     lsd
     # Basic
     htop
-
     # Azure / IaC / Microsoft
     (azure-cli.withExtensions [ azure-cli.extensions.resource-graph ])
     powershell
     devcontainer
   ];
 
-  programs.fish = {
-    enable = true;
-    shellInit = builtins.readFile ./fish/shellInit.fish;
-    interactiveShellInit = builtins.readFile ./fish/interactiveShellInit.fish + "\n" + builtins.readFile ./fish/tide.fish;
+  programs = {
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
 
-    plugins = [
-      {
-        name = "tide";
-        src = pkgs.fishPlugins.tide.src;
-      }
-    ];
+    # Tools
+    vim.enable = true;
+    git.enable = true;
+    bat.enable = true;
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
+    # Shell
+    fish = {
+      enable = true;
+      shellInit = builtins.readFile ./config/fish/shellInit.fish;
+      interactiveShellInit =
+        builtins.readFile ./config/fish/interactiveShellInit.fish
+        + "\n"
+        + builtins.readFile ./config/fish/tide.fish;
+      plugins = [
+        {
+          name = "tide";
+          src = pkgs.fishPlugins.tide.src;
+        }
+      ];
+    };
   };
-  programs.vim.enable = true;
-  programs.git.enable = true;
-  programs.fzf = {
-   enable = true;
-   enableFishIntegration = true;
-  };
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-  programs.bat.enable = true;
 
-  home.file = {
-
-  };
-
-  # Configure alacritty through home manager without beeing a nix package.
-  # This helps to avoid issues with desktop application on non nixos systems.
-  xdg.configFile."alacritty/alacritty.toml".source = ./alacritty/alacritty.toml;
-
-  home.sessionVariables = {
-
-  };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  # Configure alacritty through home manager without being a nix package.
+  # This helps to avoid issues with desktop applications on non-NixOS systems.
+  xdg.configFile."alacritty/alacritty.toml".source = ./config/alacritty/alacritty.toml;
 }
