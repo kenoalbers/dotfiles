@@ -14,9 +14,13 @@
     # Basic
     htop
     # Azure / IaC / Microsoft
-    (azure-cli.withExtensions [ azure-cli.extensions.resource-graph ])
+    (azure-cli.withExtensions [
+      azure-cli.extensions.resource-graph
+      azure-cli.extensions.azure-devops
+    ])
     powershell
     devcontainer
+    tenv
   ];
 
   programs = {
