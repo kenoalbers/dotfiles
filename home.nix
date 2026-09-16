@@ -14,13 +14,15 @@
     # Basic
     htop
     # Azure / IaC / Microsoft
-    (azure-cli.withExtensions [
-      azure-cli.extensions.resource-graph
-      azure-cli.extensions.azure-devops
-    ])
+    #(azure-cli.withExtensions [
+    #  azure-cli.extensions.resource-graph
+    #  azure-cli.extensions.azure-devops
+    #])
     powershell
     devcontainer
     tenv
+    terraform-docs
+    tflint
   ];
 
   programs = {
